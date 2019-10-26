@@ -168,9 +168,13 @@ body{
 
 /* ANIMATION */
 
-.turn-earth .flowers
+.flowers
 {
-    animation: turnEarth 100s infinite linear reverse;
+    animation: turnEarth 10s infinite linear reverse;
+}
+
+.run-pause .flowers{
+    animation-play-state: paused;
 }
 
 @keyframes turnEarth
@@ -200,7 +204,12 @@ body{
     left: calc(50% - 50px);
     bottom: 40%;
     width: 100px;
-    height: 143px;
+    height: 137px;
+}
+
+.player.jump
+{
+    animation: jump 1s ease-out ;
 }
 
 /* HEAD */
@@ -272,7 +281,7 @@ body{
 {
     position: absolute;
     width: 2px;
-    height: 15px;
+    height: 25px;
     background-color: #000;
     transform: rotate(-45deg);
     transform-origin: top;
@@ -308,12 +317,12 @@ body{
 {
     width: 2px;
     position: absolute;
-    height: 18px;
+    height: 25px;
     background-color: #000;
     transform: rotate(-125deg);
     transform-origin: top;
-    left: 11px;
-    top: 11px;
+    left: 19px;
+    top: 18px;
 }
 
 .arm-step2::after
@@ -326,7 +335,7 @@ body{
     border-radius: 50%;
     position: absolute;
     left: -2px;
-    top: 14px;
+    top: 23px;
 }
 
 /* BODY BOTTOM */
@@ -340,6 +349,7 @@ body{
 {
     position: absolute;
     left: 50%;
+    transition: all 2s;
 }
 
 .leg-left
@@ -380,7 +390,7 @@ body{
     left: 16px;
     top: 28px;
     transform-origin: top;
-    transform: rotate(-3deg);
+    transform: rotate(5deg);
 }
 
 .leg-step2::after
@@ -401,25 +411,34 @@ body{
 
 /* ANIMATION */
 
-.run .arm-left, .run .arm-right
+.player-animation .arm-left, .player-animation .arm-right
 {
-    animation: runArm 0.5s infinite alternate linear;
-
+    animation: runArmAll 0.5s infinite alternate linear;
 }
 
-.run .arm-right
+.player-animation .arm-step2
+{
+    animation: runArmStep2 0.5s infinite alternate linear;
+}
+
+.player-animation .arm-right,.player-animation .arm-step2
 {
     animation-direction: alternate-reverse;
 }
 
-.run .leg-left ,.run .leg-right
+.player-animation .leg-left ,.player-animation .leg-right
 {
     animation: runLeg 0.6s infinite alternate cubic-bezier(0.4, 0, 1, 1);;
 }
 
-.run .leg-left
+.player-animation .leg-left
 {
     animation-direction: alternate-reverse;
+}
+
+.run-pause .leg-left, .run-pause .leg-right, .run-pause .arm-left,.run-pause .arm-right,  .run-pause .arm-step2
+{
+    animation-play-state: paused;
 }
 
 
@@ -431,18 +450,46 @@ body{
     }
     100%
     {
-        transform: rotate(50deg);
+        transform: rotate(70deg);
     }
 }
 
-@keyframes runArm
+@keyframes runArmAll
 {
     0%
     {
-        transform: rotate(-20deg);
+        transform: rotate(-10deg);
     }
     100%
     {
-        transform: rotate(60deg);
+        transform: rotate(71deg);
     }
+}
+
+@keyframes runArmStep2
+{
+    0%
+    {
+        transform: rotate(-160deg);
+    }
+    100%
+    {
+        transform: rotate(-135deg);
+    }
+}
+
+@keyframes jump
+{
+     0%
+     {
+        transform: translateY(0px);
+     }
+     50%
+     {
+         transform: translateY(-60px);
+     }
+     100%
+     {
+         transform: translateY(0px);
+     }
 }
