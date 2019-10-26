@@ -1,0 +1,194 @@
+/*
+ * SCENE PRINCIPAL
+ */
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.scene
+{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/*
+ *    Background
+ */
+
+.background
+{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(128,201,196,1);
+
+}
+
+.background-theme
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.background-day
+{
+    background: linear-gradient(0deg, rgba(128,201,196,1) 5%, rgba(249,234,107,1) 100%);
+    animation-direction: alternate;
+}
+
+
+.background-night
+{
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 40%, rgba(0,212,255,1) 100%); opacity: 0;
+    animation-direction: alternate-reverse;
+}
+
+/* ANIMATION */
+
+.background-animation
+{
+    animation-name: passDay;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes passDay
+{
+    0%{opacity: 1}
+    100%{opacity: 0;}
+}
+
+
+/*
+ *   SUN - MOON
+ */
+
+.sun-moon
+{
+    z-index: 0;
+    width: 100vw;
+    height: 115vw;
+    position: absolute;
+    top: 0px;
+    animation: moveSunMoon 100s infinite linear reverse;
+}
+
+.planet-sphere
+{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    border-radius: 50%;
+}
+
+.planet-radial
+{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 50px);
+}
+
+/* SUN */
+
+.background-sun
+{
+    background: #fff;
+}
+
+.radial-sun
+{
+    top: -50px;
+    background: radial-gradient(circle, rgba(253,207,76,0.7693452380952381) 0%, rgba(255,255,255,0.007440476190476164) 71%);
+}
+
+/* MOON */
+
+.radial-moon
+{
+    bottom: -50px;
+    background: radial-gradient(circle, rgba(255,255,255,0.7693452380952381) 0%, rgba(255,255,255,0.007440476190476164) 71%);
+}
+
+.background-moon
+{
+    background: #000;
+    bottom: 0px;
+}
+
+/* ANIMATION */
+
+@keyframes moveSunMoon
+{
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)}
+}
+
+/*
+ * PLANETE
+ */
+
+.planet
+{
+    position: absolute;
+    bottom: 0px;
+    left:50%;
+}
+
+/* EARTH*/
+
+.earth
+{
+    position: absolute;
+    top: -40vh;
+    left: -50vw;
+    width: 100vw;
+    height: 100vw;
+    border-radius: 50%;
+    background: green;
+}
+
+/* FLOWERS */
+
+.flowers
+{
+    position: absolute;
+    top: -40vh;
+    left: -50vw;
+    width: 100vw;
+    height: 100vw;
+    animation: turnEarth 100s infinite linear reverse;
+}
+
+@keyframes turnEarth
+{
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)}
+}
+
+.flower-red
+{
+    position: absolute;
+    top: -1vw;
+    width: 2px;
+    left: 50%;
+    height: 20px;
+    background: green;
+}
+
+
+/*
+ * PLAYER
+ */
+
+.player
+{
+    
+}
