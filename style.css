@@ -170,18 +170,9 @@ body{
 
 .flowers
 {
-    animation: turnEarth 10s infinite linear reverse;
+    transition: transform 0.5s linear;
 }
 
-.run-pause .flowers{
-    animation-play-state: paused;
-}
-
-@keyframes turnEarth
-{
-    0%{transform: rotate(0deg)}
-    100%{transform: rotate(360deg)}
-}
 
 .flower-red
 {
@@ -205,6 +196,7 @@ body{
     bottom: 40%;
     width: 100px;
     height: 137px;
+    transition: transform 1s;
 }
 
 .player.jump
@@ -482,14 +474,30 @@ body{
 {
      0%
      {
-        transform: translateY(0px);
+        transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;
      }
      50%
      {
-         transform: translateY(-60px);
+         transform: translateY(-60px) rotateX(50deg) scale3d(1.5, 1.5, 1.5);
      }
      100%
      {
-         transform: translateY(0px);
+         transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;
      }
+}
+
+@keyframes dab
+{
+    0%
+    {
+        transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;
+    }
+    50%
+    {
+        transform: translateY(-60px) rotateX(50deg) scale3d(1.5, 1.5, 1.5);
+    }
+    100%
+    {
+        transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;
+    }
 }
