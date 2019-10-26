@@ -146,6 +146,7 @@ body{
 
 .earth
 {
+    z-index: 2;
     position: absolute;
     top: -40vh;
     left: -50vw;
@@ -159,31 +160,155 @@ body{
 
 .flowers
 {
+    z-index: 1;
     position: absolute;
     top: -40vh;
     left: -50vw;
     width: 100vw;
     height: 100vw;
+    transition: transform 0.5s linear;
+
 }
+
+
+
+/* TREE */
+.tree-nth1
+{
+    transform: rotate(180deg);
+    left: calc(50% - 25px);
+    top: 10px;
+}
+
+
+.tree-nth2
+{
+    transform: rotate(233deg) scale(0.5);
+    left: calc(90% - 25px);
+    top: 21vw;
+}
+
+.tree-nth3
+{
+    transform: rotate(282deg) scale(1.2);
+    left: calc(98% - 25px);
+    top: 61vw;
+}
+
+.tree-nth4
+{
+    transform: rotate(85deg) scale(0.8);
+    left: calc(0% - 25px);
+    top: 52vw;
+}
+
+.tree-nth5
+{
+    transform: rotate(15deg) scale(1);
+    left: calc(37% - 25px);
+    top: 98vw;
+}
+
+.tree-nth6
+{
+    transform: rotate(136deg) scale(0.7);
+    left: calc(15% - 25px);
+    top: 15vw;
+}
+
+
+.tree
+{
+    position: absolute;
+    transform-origin: top;
+}
+
+.trunc
+{
+    width: 50px;
+    height: 200px;
+    background: #403022;
+    border-width: 0px 2px 0px 2px;
+    border-style: solid;
+    border-color: #261B14;
+}
+
+.foliage
+{
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    bottom: -158px;
+    left: calc(50% - 125px);
+}
+.calc-foliage
+{
+    background-color: green;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: foliageMove 1s infinite alternate;
+}
+
+.foliage-nth1 {height: 100px;width: 140px;background-color: darkgreen;}
+.foliage-nth2 {height: 145px;width: 200px;right: 0;}
+.foliage-nth3 {height: 170px;width: 210px;bottom: 0px;}
+.foliage-nth4 {height: 150px;width: 190px;top: 36px;left: 38px;}
+.foliage-nth5 {height: 150px;width: 190px;left: -9px;bottom: 42px;}
+
+.apple
+{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: red;
+}
+
+.apple-nth1{left:-75px;top: 184px;}
+.apple-nth2{left: 65px;top: 169px;}
+.apple-nth3{left: -45px;top: 289px;}
+.apple-nth4{left: 85px;top: 259px;}
+.apple-nth5{left: 15px;top: 249px;}
+
+/* BUSHS */
+.bushs
+{
+    position: absolute;
+}
+
+.bushs-nth1 {left: 10vw;top: 10vw;transform: rotate(-30deg);}
+.bushs-nth2 {left: 70vw;top: -3vw;transform: rotate(52deg) scale(1.5);}
+.bushs-nth3 {left: -5vw;top: 70vw;transform: rotate(-75deg) scale(1.2);}
+.bushs-nth4 {left: 68vw;top: 103vw;transform: rotate(198deg) scale(0.9);}
+
+.bush
+{
+    background-color: green;
+    opacity: 0.7;
+    border-radius: 50%;
+    position: absolute;
+    animation: bushMove 1s infinite alternate 0.75s;
+}
+
+.bush-nth1{height: 117px;width: 100px;}
+.bush-nth2{height: 117px;width: 100px;);left: 52px;}
+.bush-nth3{height: 117px;width: 121px;left: -17px;bottom: -144px;}
+.bush-nth4{height: 117px;width: 100px;right: -131px;}
 
 /* ANIMATION */
 
-.flowers
+@keyframes foliageMove
 {
-    transition: transform 0.5s linear;
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(10deg)}
 }
 
-
-.flower-red
+@keyframes bushMove
 {
-    position: absolute;
-    top: -1vw;
-    width: 2px;
-    left: 50%;
-    height: 20px;
-    background: green;
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(15deg)}
 }
-
 
 /*
  * PLAYER
@@ -191,6 +316,7 @@ body{
 
 .player
 {
+    z-index: 5;
     position: absolute;
     left: calc(50% - 50px);
     bottom: 40%;
@@ -484,20 +610,4 @@ body{
      {
          transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;
      }
-}
-
-@keyframes dab
-{
-    0%
-    {
-        transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;
-    }
-    50%
-    {
-        transform: translateY(-60px) rotateX(50deg) scale3d(1.5, 1.5, 1.5);
-    }
-    100%
-    {
-        transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;
-    }
 }

@@ -4,13 +4,12 @@ let state = 'motionless'
 let testJump = true
 let degEarth = 0
 let dir = true
-step = 0
+step = 1
 
 window.addEventListener('keydown',
     function (event) {
-        if(step >= 1)
+        if(step%2 == 0)
         {
-            step = 0
             if (dir) {
                 degEarth += 5
             }
@@ -19,13 +18,14 @@ window.addEventListener('keydown',
             }
             planet.style.transform = "rotate(" + degEarth + "deg)"
         }
-        step++
         if(event.code == "ArrowRight")
         {
             player.classList.remove('run-pause')
             dir = false
             state = 'run-pause'
             player.style.transform = "rotateY(0deg)"
+            step++
+
         }
         else if(event.code == "ArrowLeft")
         {
@@ -33,6 +33,8 @@ window.addEventListener('keydown',
             dir = true
             state = 'run-pause'
             player.style.transform = "rotateY(180deg)"
+            step++
+
         }
         else if(event.code == "Space" && testJump)
         {
@@ -43,6 +45,11 @@ window.addEventListener('keydown',
                 testJump = true
                 clearInterval(inter)
             },1000)
+
+            if(degEarth%360 == 0)
+            {
+                console.log('rgsdfeiuu')
+            }
         }
         else
         {
@@ -64,6 +71,5 @@ window.addEventListener('keyup',
         if(state != 'motionless' && event.code != 'Space')
         {
             player.classList.add(state)
-            planet.classList.add(state)
         }
  });
