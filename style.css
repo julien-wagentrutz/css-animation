@@ -14,6 +14,92 @@ body{
     overflow: hidden;
 }
 
+/*
+ * MENU
+ */
+
+.menu
+{
+    z-index: 10;
+    position: absolute;
+    top: 0px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    transition: transform  1s;
+}
+
+.menu.open
+{
+    transform: translateX(-300px);
+}
+
+.menu .menu-content
+{
+    background: rgba(104, 234, 237, 0.9);
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: monospace;
+}
+
+
+.menu .button-open
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    border-radius: 0% 0% 0% 100%;
+    position: absolute;
+    top: 0px;
+    left: -50px;
+    opacity: 0.9;
+    background-color: #68EAED;
+    cursor: pointer;
+}
+
+.menu .button-open .bar
+{
+    width: 23px;
+    height: 3px;
+    background: #000;
+    margin-top: 7px;
+    margin-right: 9px;
+    border-radius: 5px;
+}
+
+.menu .option
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu .option-menu
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu .option-choice
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+
+
 
 /*
  *    Background
@@ -119,7 +205,7 @@ body{
 
 .background-moon
 {
-    background: #000;
+    background: #B8B8B8;
     bottom: 0px;
 }
 
@@ -153,7 +239,32 @@ body{
     width: 100vw;
     height: 100vw;
     border-radius: 50%;
-    background: green;
+    background: #448C19;
+}
+
+.middle-earth
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(156,94,15,0.7693452380952381) 41%, rgba(255,255,255,0.007440476190476164) 77%);
+}
+
+.road
+{
+    position: absolute;
+    top: 0%;
+    opacity: 0;
+    left: 0%;
+    width: 100vw;
+    height: 100vw;
+    border-radius: 50%;
+    border: 6vw solid #BEB5AB;
+    box-sizing: border-box;
+    transition: all 0.6s linear;
 }
 
 /* FLOWERS */
@@ -166,7 +277,8 @@ body{
     left: -50vw;
     width: 100vw;
     height: 100vw;
-    transition: transform 0.5s linear;
+    will-change: transform;
+    transition: transform 0.6s linear;
 
 }
 
@@ -190,9 +302,9 @@ body{
 
 .tree-nth3
 {
-    transform: rotate(282deg) scale(1.2);
-    left: calc(98% - 25px);
-    top: 61vw;
+    transform: rotate(291deg) scale(1.2);
+    left: calc(95% - 25px);
+    top: 69vw;
 }
 
 .tree-nth4
@@ -221,13 +333,21 @@ body{
 {
     position: absolute;
     transform-origin: top;
+    opacity: 0;
+    transition: opacity 2s;
+    will-change: transform;
+}
+
+.appear
+{
+    opacity: 1!important;
 }
 
 .trunc
 {
     width: 50px;
     height: 200px;
-    background: #403022;
+    background: #C98255;
     border-width: 0px 2px 0px 2px;
     border-style: solid;
     border-color: #261B14;
@@ -243,14 +363,15 @@ body{
 }
 .calc-foliage
 {
-    background-color: green;
+    background-color: #6CA517;
     position: absolute;
     border-radius: 50%;
     opacity: 0.7;
+    will-change: transform;
     animation: foliageMove 1s infinite alternate;
 }
 
-.foliage-nth1 {height: 100px;width: 140px;background-color: darkgreen;}
+.foliage-nth1 {height: 100px;width: 140px;}
 .foliage-nth2 {height: 145px;width: 200px;right: 0;}
 .foliage-nth3 {height: 170px;width: 210px;bottom: 0px;}
 .foliage-nth4 {height: 150px;width: 190px;top: 36px;left: 38px;}
@@ -262,7 +383,9 @@ body{
     width: 20px;
     border-radius: 50%;
     position: absolute;
-    background-color: red;
+    background-color: #661424;
+    will-change: transform;
+
 }
 
 .apple-nth1{left:-75px;top: 184px;}
@@ -284,10 +407,11 @@ body{
 
 .bush
 {
-    background-color: green;
+    background-color: #7FA82A;
     opacity: 0.7;
     border-radius: 50%;
     position: absolute;
+    will-change: transform;
     animation: bushMove 1s infinite alternate 0.75s;
 }
 
@@ -310,6 +434,191 @@ body{
     100%{transform:rotate(15deg)}
 }
 
+/* HOUSE */
+
+.house-nth1{background: #F2F2F2;transform: rotate(-70deg);top: 25vw;left: -15vw;}
+.house-nth2{background-color: #D2DDEA;top: 77vw;transform: rotate(-133deg) scale(0.8);left: -1vw;}
+.house-nth3{background-color: antiquewhite;top: 76vw;transform: rotate(-227deg) scale(1.1);left: 79vw;}
+.house-nth4{top: 43vw;transform: rotate(-265deg) scale(0.9);left: 92vw;    background-color: #FCF1E1;}
+
+.house
+{
+    position: absolute;
+    width: 25vw;
+    height: 19vw;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.roof
+{
+    position: absolute;
+    width: 27vw;
+    height: 8vw;
+    background-color: #877D7A;
+    left: -1vw;
+    top: -4vw;
+}
+
+.door
+{
+    position: absolute;
+    width: 5vw;
+    height: 10vw;
+    top: 6vw;
+    left: calc(50% - 25px);
+    background-color: #BF8853;
+}
+
+.wrist
+{
+    height: 0.7vw;
+    width: 0.7vw;
+    position: absolute;
+    background-color: bisque;
+    border-radius: 50%;
+    right: 0.5vw;
+    top: 35%;
+}
+
+/* BUILDING */
+
+.building
+{
+    position: absolute;
+    width: 22vw;
+    height: 38vw;
+    background: #BCBCBC;
+    border: 1px solid #3C3C3C;
+}
+
+.building.building-nth1{left: 19vw;bottom: 95vw;transform: rotate(-16deg);}
+.building.building-nth2{left: 90vw;bottom: 68vw;transform: rotate(52deg) scale(0.8);}
+.building.building-nth3{left: 63vw;bottom: 86vw;transform: rotate(22deg) scale(0.6);}
+.building.building-nth4{left: 44vw;bottom: 90vw;transform: rotate(4deg) scale(0.9);}
+.building.building-nth5{left: 81vw;bottom: 83vw;transform: rotate(42deg) scale(1);}
+
+
+/* EIFFEL TOWER */
+
+.eiffel-tower
+{
+    position: absolute;
+    width: 20vw;
+    height: 40vw;
+    left: 40vw;
+    bottom: -38vw;
+    transform: rotate(180deg);
+}
+
+.eiffel-structure-min
+{
+    height: 46%;
+    width: 46.5%;
+    bottom: 0;
+    border: solid 5px #776F6B;
+    position: absolute;
+    border-color: transparent #776F6B transparent transparent;
+    border-radius: 0 0px 100%/101% 0;
+}
+
+.eiffel-structure-large
+{
+    height: 100%;
+    width: 46.5%;
+    bottom: 0;
+    border: solid 5px #776F6B;
+    position: absolute;
+    border-color: transparent #776F6B transparent transparent;
+    border-radius: 99% 3px 100%/100% 0;
+}
+
+.eiffel-structure-min.right
+{
+    transform: rotateY(180deg);
+    right: 0;
+}
+
+.eiffel-structure-large.right
+{
+    transform: rotateY(180deg);
+    right: 0;
+}
+
+.eiffel-structure-arc
+{
+    height: 17.2%;
+    width: 7.5vw;
+    left: 30.2%;
+    bottom: 0;
+    border: solid 3px #776F6B;
+    position: absolute;
+    border-color: #776F6B transparent transparent transparent;
+    border-radius: 50%;
+}
+
+.eiffel-structure-floor
+{
+    height: 17.2%;
+    width: 3.2vw;
+    left: 40.8%;
+    bottom: 22%;
+    border: solid 3px #776F6B;
+    position: absolute;
+    border-color: transparent transparent #776F6B transparent;
+}
+
+.eiffel-structure-floor.floor-two
+{
+    width: 1.2vw;
+    left: 46.2%;
+    bottom: 32.6%;
+}
+
+.eiffel-light
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.eiffel-light.right
+{
+    transform: rotateY(180deg);
+}
+
+.eiffel-light .light
+{
+    animation-name: lightEiffelTower;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 100ms;
+    height: 5px;
+    width: 5px;
+    background: #fff;
+    position: absolute;
+    border-radius:50%;
+    box-shadow:0px 0px 24px 14px rgba(251,255,138,1);
+}
+
+.eiffel-light .light-nth1{bottom: 10%;left: 25%;animation-delay:600ms}
+.eiffel-light .light-nth2{bottom: 16%;left: 29%;animation-delay:100ms}
+.eiffel-light .light-nth3{bottom: 22%;left: 38%;animation-delay:200ms}
+.eiffel-light .light-nth4{bottom: 28%;left: 37%;animation-delay:100ms}
+.eiffel-light .light-nth5{bottom: 34%;left: 44%;animation-delay:400ms}
+.eiffel-light .light-nth6{bottom: 41%;left: 43%;animation-delay:100ms}
+.eiffel-light .light-nth7{bottom: 48%;left: 46%;animation-delay:700ms}
+.eiffel-light .light-nth8{bottom: 55%;left: 46%;animation-delay:200ms}
+.eiffel-light .light-nth9{bottom: 61%;left: 48%;animation-delay:100ms}
+
+/* ANIMATION EIFFEL TOWER */
+
+@keyframes lightEiffelTower
+{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+
 /*
  * PLAYER
  */
@@ -323,6 +632,7 @@ body{
     width: 100px;
     height: 137px;
     transition: transform 1s;
+    will-change: transform;
 }
 
 .player.jump
@@ -339,7 +649,39 @@ body{
     border: 2px #000 solid;
     border-radius: 50%;
     margin: auto;
+    background-color: antiquewhite;
 }
+
+.eye
+{
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+}
+
+.eye-left{top: 10px;left: 42px;}
+.eye-right{top: 10px;left: 55px;}
+
+.mouth
+{
+    position: absolute;
+    height: 3px;
+    bottom: 111px;
+    width: 12px;
+    left: 43px;
+    transform: rotate(180deg);
+    border-radius: 50% / 100% 100% 0 0;
+    border: 1px solid #000;
+    border-bottom: none;
+}
+
+.smile{animation: smile 5s infinite alternate;}
+.sad{animation: sad 5s infinite alternate;}
+.dance{animation: dance 3s infinite alternate;}
+
+.dance .leg-left, .dance .leg-right,.dance .arm-left,.dance .arm-right,.dance .arm-step2 {animation-play-state: running!important;}
 
 /* BODY TOP */
 .player .body-top
@@ -529,85 +871,64 @@ body{
 
 /* ANIMATION */
 
-.player-animation .arm-left, .player-animation .arm-right
-{
-    animation: runArmAll 0.5s infinite alternate linear;
-}
+.player-animation .arm-left, .player-animation .arm-right {animation: runArmAll 0.5s infinite alternate linear;}
 
-.player-animation .arm-step2
-{
-    animation: runArmStep2 0.5s infinite alternate linear;
-}
+.player-animation .arm-step2 {animation: runArmStep2 0.5s infinite alternate linear;}
 
-.player-animation .arm-right,.player-animation .arm-step2
-{
-    animation-direction: alternate-reverse;
-}
+.player-animation .arm-right,.player-animation .arm-step2 {animation-direction: alternate-reverse;}
 
-.player-animation .leg-left ,.player-animation .leg-right
-{
-    animation: runLeg 0.6s infinite alternate cubic-bezier(0.4, 0, 1, 1);;
-}
+.player-animation .leg-left ,.player-animation .leg-right {animation: runLeg 0.6s infinite alternate cubic-bezier(0.4, 0, 1, 1);;}
 
-.player-animation .leg-left
-{
-    animation-direction: alternate-reverse;
-}
+.player-animation .leg-left {animation-direction: alternate-reverse;}
 
-.run-pause .leg-left, .run-pause .leg-right, .run-pause .arm-left,.run-pause .arm-right,  .run-pause .arm-step2
-{
-    animation-play-state: paused;
-}
+.run-pause .leg-left, .run-pause .leg-right, .run-pause .arm-left,.run-pause .arm-right,  .run-pause .arm-step2 {animation-play-state: paused;}
 
 
 @keyframes runLeg
 {
-    0%
-    {
-       transform: rotate(-20deg);
-    }
-    100%
-    {
-        transform: rotate(70deg);
-    }
+    0% {transform: rotate(-20deg);}
+    100% {transform: rotate(70deg);}
 }
 
 @keyframes runArmAll
 {
-    0%
-    {
-        transform: rotate(-10deg);
-    }
-    100%
-    {
-        transform: rotate(71deg);
-    }
+    0% {transform: rotate(-10deg);}
+    100% {transform: rotate(71deg);}
 }
 
 @keyframes runArmStep2
 {
-    0%
-    {
-        transform: rotate(-160deg);
-    }
-    100%
-    {
-        transform: rotate(-135deg);
-    }
+    0% {transform: rotate(-160deg);}
+    100% {transform: rotate(-135deg);}
 }
 
 @keyframes jump
 {
-     0%
-     {
-        transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;
-     }
-     50%
-     {
-         transform: translateY(-60px) rotateX(50deg) scale3d(1.5, 1.5, 1.5);
-     }
-     100%
-     {
-         transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;
-     }
+     0% {transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;}
+     50% {transform: translateY(-60px) rotateX(50deg) scale3d(1.5, 1.5, 1.5);}
+     100% {transform: translateY(0px) rotateX(0deg) scale3d(1, 1, 1);;}
+}
+
+
+@keyframes smile
+{
+    0%{transform: scaleY(1) rotate(180deg)}
+    100%{transform: scaleY(1.8) rotate(185deg)}
+}
+
+@keyframes sad
+{
+    0%{transform: scaleY(1)}
+    100%{transform: scaleY(1.8)}
+}
+
+@keyframes dance
+{
+    0%{transform: rotateY(0deg)}
+    20%{transform: rotateY(180deg)}
+    40%{transform: rotateY(0deg)}
+    60%{transform: rotateY(180deg)}
+    80%{transform: rotateY(0deg)}
+    100%{transform: rotateY(180deg)}
+
 }
