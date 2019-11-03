@@ -10,8 +10,8 @@
     </head>
     <body>
         <div class="scene">
-            <div class="menu">
-                <div class="button-open">
+            <div class="menu js-menu">
+                <div class="button-open js-button-open">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -45,6 +45,18 @@
                                 <label for="road">Route</label>
                                 <input id="road" type="checkbox">
                             </div>
+                            <div class="option-choice">
+                                <label for="building">Immeuble</label>
+                                <input id="building" type="checkbox">
+                            </div>
+                            <div class="option-choice">
+                                <label for="eiffel-tower">Tour eiffel</label>
+                                <input id="eiffel-tower" type="checkbox">
+                            </div>
+                            <div class="option-choice">
+                                <label for="speed-player">Vitesse du joueur</label>
+                                <input id="speed-player" type="number" value="2" min="1" max=5">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -66,10 +78,10 @@
             <div class="planet run-pause">
                 <div class="earth">
                     <div class="middle-earth"></div>
-                    <div class="road"></div>
+                    <div class="road js-road"></div>
                 </div>
-                <div class="flowers ">
-                    <div class="eiffel-tower">
+                <div class="flowers js-flowers">
+                    <div class="eiffel-tower js-eiffel-tower">
                         <div class="eiffel-structure-min left"></div>
                         <div class="eiffel-structure-min right"></div>
                         <div class="eiffel-structure-large left"></div>
@@ -100,15 +112,15 @@
                             <div class="light light-nth9"></div>
                         </div>
                     </div>
-                    <div class="building building-nth1">
+                    <div class="building js-building building-nth1">
                     </div>
-                    <div class="building building-nth2">
+                    <div class="building js-building building-nth2">
                     </div>
-                    <div class="building building-nth3">
+                    <div class="building js-building building-nth3">
                     </div>
-                    <div class="building building-nth4">
+                    <div class="building js-building building-nth4">
                     </div>
-                    <div class="building building-nth5">
+                    <div class="building js-building building-nth5">
                     </div>
                     <div class="bushs bushs-nth1">
                         <div class="bush bush-nth1"></div>
@@ -134,7 +146,7 @@
                         <div class="bush bush-nth3"></div>
                         <div class="bush bush-nth4"></div>
                     </div>
-                    <div class="tree tree-nth1">
+                    <div class="tree js-tree tree-nth1">
                         <div class="foliage">
                             <div class="calc-foliage foliage-nth1"></div>
                             <div class="calc-foliage foliage-nth2"></div>
@@ -151,7 +163,7 @@
                             <div class="apple apple-nth5"></div>
                         </div>
                     </div>
-                    <div class="tree tree-nth2">
+                    <div class="tree js-tree tree-nth2">
                         <div class="foliage">
                             <div class="calc-foliage foliage-nth1"></div>
                             <div class="calc-foliage foliage-nth2"></div>
@@ -168,7 +180,7 @@
                             <div class="apple apple-nth5"></div>
                         </div>
                     </div>
-                    <div class="tree tree-nth3">
+                    <div class="tree js-tree tree-nth3">
                         <div class="foliage">
                             <div class="calc-foliage foliage-nth1"></div>
                             <div class="calc-foliage foliage-nth2"></div>
@@ -185,7 +197,7 @@
                             <div class="apple apple-nth5"></div>
                         </div>
                     </div>
-                    <div class="tree tree-nth4">
+                    <div class="tree js-tree tree-nth4">
                         <div class="foliage">
                             <div class="calc-foliage foliage-nth1"></div>
                             <div class="calc-foliage foliage-nth2"></div>
@@ -202,7 +214,7 @@
                             <div class="apple apple-nth5"></div>
                         </div>
                     </div>
-                    <div class="tree tree-nth5">
+                    <div class="tree js-tree tree-nth5">
                         <div class="foliage">
                             <div class="calc-foliage foliage-nth1"></div>
                             <div class="calc-foliage foliage-nth2"></div>
@@ -219,7 +231,7 @@
                             <div class="apple apple-nth5"></div>
                         </div>
                     </div>
-                    <div class="tree tree-nth6">
+                    <div class="tree js-tree tree-nth6">
                         <div class="foliage">
                             <div class="calc-foliage foliage-nth1"></div>
                             <div class="calc-foliage foliage-nth2"></div>
@@ -236,25 +248,25 @@
                             <div class="apple apple-nth5"></div>
                         </div>
                     </div>
-                    <div class="house house-nth1">
+                    <div class="house js-house house-nth1">
                         <div class="roof"></div>
                         <div class="door">
                             <div class="wrist"></div>
                         </div>
                     </div>
-                    <div class="house house-nth2">
+                    <div class="house js-house house-nth2">
                         <div class="roof"></div>
                         <div class="door">
                             <div class="wrist"></div>
                         </div>
                     </div>
-                    <div class="house house-nth3">
+                    <div class="house js-house house-nth3">
                         <div class="roof"></div>
                         <div class="door">
                             <div class="wrist"></div>
                         </div>
                     </div>
-                    <div class="house house-nth4">
+                    <div class="house js-housee house-nth4">
                         <div class="roof"></div>
                         <div class="door">
                             <div class="wrist"></div>
@@ -262,7 +274,7 @@
                     </div>
                 </div>
             </div>
-            <div class="player player-animation run-pause">
+            <div class="player player-animation run-pause js-player">
                 <div class="head">
                     <div class="eye eye-left"></div>
                     <div class="eye eye-right"></div>

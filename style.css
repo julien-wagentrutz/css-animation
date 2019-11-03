@@ -81,6 +81,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .menu .option-menu
@@ -239,7 +240,7 @@ body{
     width: 100vw;
     height: 100vw;
     border-radius: 50%;
-    background: #448C19;
+    background: #6AAE51;
 }
 
 .middle-earth
@@ -265,6 +266,7 @@ body{
     border: 6vw solid #BEB5AB;
     box-sizing: border-box;
     transition: all 0.6s linear;
+    will-change: transform;
 }
 
 /* FLOWERS */
@@ -387,6 +389,10 @@ body{
     will-change: transform;
 
 }
+.apple.fall
+{
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.82, 1.21);
+}
 
 .apple-nth1{left:-75px;top: 184px;}
 .apple-nth2{left: 65px;top: 169px;}
@@ -448,6 +454,7 @@ body{
     height: 19vw;
     opacity: 0;
     transition: opacity 2s;
+    will-change: transform;
 }
 
 .roof
@@ -490,6 +497,9 @@ body{
     height: 38vw;
     background: #BCBCBC;
     border: 1px solid #3C3C3C;
+    opacity: 0;
+    transition: opacity 2s;
+    will-change: transform;
 }
 
 .building.building-nth1{left: 19vw;bottom: 95vw;transform: rotate(-16deg);}
@@ -509,6 +519,9 @@ body{
     left: 40vw;
     bottom: -38vw;
     transform: rotate(180deg);
+    opacity: 0;
+    transition: opacity 2s;
+    will-change: transform;
 }
 
 .eiffel-structure-min
