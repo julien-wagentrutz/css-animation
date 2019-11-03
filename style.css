@@ -527,6 +527,27 @@ body{
 .building.building-nth4{left: 44vw;bottom: 90vw;transform: rotate(4deg) scale(0.9);}
 .building.building-nth5{left: 81vw;bottom: 83vw;transform: rotate(42deg) scale(1);}
 
+/* TEXT */
+
+.text
+{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 100vw;
+    bottom: 28vw;
+    transform: rotate(86deg);
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 1s;
+}
+
+.text p
+{
+    color: white;
+    font: bold 12vw Helvetica, Arial, Sans-Serif;
+    text-shadow: 14px 14px #fe4902, 14px 14px #fe4902, 14px 14px #fe4902;
+}
 
 /* EIFFEL TOWER */
 

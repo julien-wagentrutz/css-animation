@@ -8,6 +8,7 @@ const trees = document.querySelectorAll('.js-tree')
 const houses = document.querySelectorAll('.js-house')
 const buildings = document.querySelectorAll('.js-building')
 const eiffelTower = document.querySelector('.js-eiffel-tower')
+const text = document.querySelector('.js-text')
 const treesDeg =
     {
         '-356' : 0,
@@ -80,7 +81,7 @@ const movePlayer = () =>
         if(direction)
         {
             step++
-            if(step>5)step=5
+            if(step>6)step=6
         }
         else
         {
@@ -145,6 +146,10 @@ const modifyWorld = ()=>
         case  5:
             if(!unCheck)
                 appearElement(eiffelButton,eiffelTower)
+            text.classList.remove('appear')
+            break;
+        case  6:
+                text.classList.add('appear')
             break;
     }
 }
@@ -210,9 +215,6 @@ const jump = () =>
             }
         }
     }
-
-
-
     player.classList.add('jump');
     let inter = setInterval(function () {
         player.classList.remove('jump')
