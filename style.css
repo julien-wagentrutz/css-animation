@@ -500,6 +500,25 @@ body{
     opacity: 0;
     transition: opacity 2s;
     will-change: transform;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.building .floor
+{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.building .floor .window
+{
+    height: 100%;
+    border: 1px solid #848484;
+    width: 20%;
+    background: linear-gradient(38deg, rgba(167,190,220,1) 41%, rgba(146,192,222,1) 77%);
 }
 
 .building.building-nth1{left: 19vw;bottom: 95vw;transform: rotate(-16deg);}
